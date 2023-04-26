@@ -1,0 +1,7 @@
+{
+    "/api/*": {
+    "target": "https://bio.torre.co",
+    "secure": true,
+    "changeOrigin": true
+    }
+}
