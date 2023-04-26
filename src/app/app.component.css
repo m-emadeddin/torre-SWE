@@ -1,36 +1,75 @@
 .toolbar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 60px;
+  margin-bottom: 10px;
   display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  height: 100px;
   background-color: #1976d2;
   color: white;
   font-weight: 600;
 }
+
+.doc-title {
+  text-align: center;
+}
+
+.subtitle {
+  text-align: center;
+}
+
+.searchbar {
+  margin-top: 2em;
+  width: 100%;
+  text-align: center;
+}
+
+.searchbar p {
+  color: rgb(223, 71, 89);
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
 .searchbar input {
-  display: block;
-  margin: auto;
-  margin-top: 100px;
-  width: 80%;
+  display: inline-block;
+  width: 45%;
   border: 1px solid #999;
   border-radius: 12px;
   padding: 12px 8px;
   outline-color: #1976d2;
   font-size: 18px;
   color: #333;
+  margin-right: 1em;
 }
-.searchbar p {
-  color: rgb(223, 71, 89);
-  text-align: center;
+
+.searchbar button {
+  display: inline-block;
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  padding: 8px;
+  border-radius: 12px;
+  width: 100px;
+  height: 50px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
 }
+
+.searchbar button i {
+  font-size: 20px;
+}
+
+.searchbar button:hover {
+  background-color: #0d47a1;
+}
+
 
 .content {
   display: flex;
   justify-content: space-around;
 }
+
 .person {
   /* background-color: 	#5e626b; */
   flex-basis: 45%;
@@ -42,14 +81,20 @@
   overflow: hidden;
   padding: 20px 12px;
   margin-top: 20px;
+  flex-basis: 30%;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 .person .image img {
-  border-radius: 12px;
+  border-radius: 80px;
 }
+
 .person h1 {
   font-size: 24px;
 }
+
 .person span.title {
   background-color: #999;
   padding: 4px 6px;
@@ -58,21 +103,43 @@
   color: #fff;
   margin-inline-end: 8px;
 }
-.person h4 {
+
+.person h3 {
   margin-block: 16px;
 }
+
+.person .properties {
+  white-space: break-spaces;
+  line-height: 30px;
+}
+
+.skill, .edu, .exp, .award, .langs {
+  background-color: rgb(47, 154, 255);
+  background-size: contain;
+  margin: 0 8px 4px 0;
+  border-radius: 10px;
+  padding: 0.5em 1em;
+  font-size: 16px;
+  color: #fff;
+  display: inline-block;
+}
+
+.skill{
+  cursor: pointer;
+}
+
+.skill:last-child, .edu:last-child, .exp:last-child, .award:last-child, .langs:last-child {
+  margin: 0;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
 .person .skills {
   white-space: break-spaces;
   line-height: 28px;
+  margin-top: 16px;
 }
-.person .skill {
-  background-color: #999;
-  margin: 0;
-  border-radius: 8px;
-  padding: 0;
-  font-size: 12px;
-  color: #fff;
-  margin-inline-end: 8px;
-  display: inline-block;
-  margin-block-end: 4px;
-} 

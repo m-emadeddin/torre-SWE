@@ -17,16 +17,29 @@
     <span class="title"> {{ userData?.person?.professionalHeadline }}</span>
 
     <h4>Education</h4>
-    <div class="skills">
-      <p class="skill" *ngFor="let ed of userData?.education">
+    <div class="properties">
+      <p class="edu" *ngFor="let ed of userData?.education">
         {{ ed?.name }}
       </p>
     </div>
 
     <h4>Experiences</h4>
-    <div class="skills">
-      <p class="skill" *ngFor="let ex of userData?.experiences">
+    <div class="properties">
+      <p class="exp" *ngFor="let ex of userData?.experiences">
         {{ ex?.name }}
+      </p>
+    </div>
+
+    <h4>Awards</h4>
+    <div class="properties">
+      <p class="award" *ngFor="let ex of userData?.awards">
+        {{ ex?.name }}
+      </p>
+    </div>
+    <h4>Languages</h4>
+    <div class="properties">
+      <p class="langs" *ngFor="let ex of userData?.languages">
+        {{ ex?.language }}-{{ex?.fluency}}
       </p>
     </div>
   </div>
@@ -38,19 +51,10 @@
       </p>
       
     </div>
-
-    <h4>Awards</h4>
-    <div class="skills">
-      <p class="skill" *ngFor="let ex of userData?.awards">
-        {{ ex?.name }}
-      </p>
-    </div>
-    <h4>Languages</h4>
-    <div class="skills">
-      <p class="skill" *ngFor="let ex of userData?.languages">
-        {{ ex?.language }}-{{ex?.fluency}}
-      </p>
-    </div>
   </div>
+
+  <div class="person" *ngIf="!error && userData">
+    
+    </div>
 </div>
 <router-outlet></router-outlet>
