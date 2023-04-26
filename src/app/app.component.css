@@ -1,0 +1,43 @@
+.toolbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: #1976d2;
+  color: white;
+  font-weight: 600;
+}
+.searchbar input {
+  display: block;
+  margin: auto;
+  margin-top: 100px;
+  width: 80%;
+  border: 1px solid #999;
+  border-radius: 12px;
+  padding: 12px 8px;
+  outline-color: #1976d2;
+  font-size: 18px;
+  color: #333;
+}
+.searchbar p {
+  color: rgb(223, 71, 89);
+  text-align: center;
+}
+
+.content {
+  display: flex;
+  justify-content: space-around;
+}
+.person {
+  flex-basis: 45%;
+  margin: auto;
+  box-shadow: 0px 6px 20px #999;
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 20px 12px;
+  margin-top: 20px;
+}
+

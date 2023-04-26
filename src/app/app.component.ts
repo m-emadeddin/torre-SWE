@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,24 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  constructor(private http: HttpClient) { }
+  searchText :string= '';
+  error:boolean=false;
   title = 'torre-SWE';
+  userData:any;
+
+
+  getUserData(){
+    this.http.get(`https://bio.torre.co/api/bios/${this.searchText}`,{headers:{'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'GET,POST,OPTIONS,DELETE,PUT'}})
+    .subscribe((res)=>{
+      this.error = false;
+      console.log(res);
+      this.userData = res
+    },(err)=>{
+      this.error = true
+    })
+  }
+
+
 }
