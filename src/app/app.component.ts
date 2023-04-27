@@ -3,11 +3,6 @@ import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
-declare var process: {
-  env: {
-    API_URL: string
-  }
-};
 
 @Component({
   selector: 'app-root',
