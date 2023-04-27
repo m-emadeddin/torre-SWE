@@ -23,13 +23,7 @@ export class AppComponent {
     this.selectedSkill = null;
     this.userData = null;
     this.error = false;
-    this.http.get(`https://bio.torre.co/api/bios/${this.searchText}`, {
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET',
-        'Content-Type': 'application/json',
-        'X-True-Client': '127.0.0.1'
-      },
+    this.http.get(`/api/bios/${this.searchText}`, {
       observe: 'response',
       responseType: 'json',
       withCredentials: false,})
