@@ -23,8 +23,7 @@ export class AppComponent {
     this.selectedSkill = null;
     this.userData = null;
     this.error = false;
-    this.http.get(`https://bio.torre.co/api/bios/${this.searchText}`, {
-
+    this.http.get(`/api/bios/${this.searchText}`, {
       observe: 'response',
       responseType: 'json',
       withCredentials: false,})

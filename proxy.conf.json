@@ -2,6 +2,9 @@
     "/api": {
     "target": "https://bio.torre.co",
     "secure": true,
-    "changeOrigin": true
+    "changeOrigin": true,
+    "headers": {
+      "Origin": "https://torre-swe.vercel.app"
+        }
     }
 }
