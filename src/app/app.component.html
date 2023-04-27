@@ -35,12 +35,6 @@
         {{ ex?.name }}
       </p>
     </div>
-  </div>
-  <div class="card" *ngIf="!error && userData">
-    <h3>Skills</h3>
-    <div class="properties">
-      <app-skills [skills]="userData?.strengths" (onSelect)="onSkillSelected($event)" />
-    </div>
 
     <h3>Awards</h3>
     <div class="properties">
@@ -54,6 +48,15 @@
         {{ ex?.language }}-{{ex?.fluency}}
       </p>
     </div>
+  </div>
+
+
+  <div class="card" *ngIf="!error && userData">
+    <h3>Skills</h3>
+    <div class="properties">
+      <app-skills [skills]="userData?.strengths" (onSelect)="onSkillSelected($event)" />
+    </div>
+
   </div>
 
   <div class="card" *ngIf="!error && userData">
