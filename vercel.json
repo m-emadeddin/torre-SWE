@@ -1,6 +1,6 @@
 {
     "routes": [
-      { "src": "/api/(.*)", "dest": "https://torre-swe.vercel.app/api/$1" }
+      { "src": "/api/(.*)", "dest": "https://bio.torre.co/api/$1" }
     ]
   }
   
