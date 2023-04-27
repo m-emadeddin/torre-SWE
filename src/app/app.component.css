@@ -274,3 +274,15 @@ body::-webkit-scrollbar-thumb {
 :host {
   border: none;
 }
+
+.profile-card-experience__txt1 {
+  padding: 19px;
+  margin: 10px;
+  font-size: 16px;
+  font-weight: 400;
+  display: block;
+  border: solid 1px;
+  background-color: #3C118C;
+  color: #fff;
+  border-radius: 15px;
+}
