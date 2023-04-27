@@ -11,30 +11,26 @@ export class AppComponent {
   constructor(private http: HttpClient) { }
   searchText :string= '';
   error:boolean=false;
-  title = 'torre-SWE';
+  title = 'torre-project';
   userData:any;
+  selectedSkill: any;
 
 
   getUserData(){
-    this.error = false;
+    this.selectedSkill = null;
     this.userData = null;
-    this.http
-      .get(`http://localhost:4200/api/bios/${this.searchText}`, {
-        headers: {
-          'Access-Control-Allow-Origin': '*',
-          'Access-Control-Allow-Methods': 'GET,POST,OPTIONS,DELETE,PUT',
-        },
-      })
-      .subscribe(
-        (res) => {
-          this.error = false;
-          this.userData = res;
-        },
-        (err) => {
-          this.error = true;
-        }
-      );
+    this.error = false;
+    this.http.get(`http://localhost:4200/api/bios/${this.searchText}`,{headers:{'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'GET,POST,OPTIONS,DELETE,PUT'}})
+    .subscribe((res)=>{
+      this.error = false;
+      this.userData = res;
+    },(err)=>{
+      this.error = true
+    })
   }
 
-
+  onSkillSelected(selected: any) {
+    this.selectedSkill = selected;
+  }
 }

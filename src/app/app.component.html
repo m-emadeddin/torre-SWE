@@ -1,60 +1,74 @@
 <!-- Toolbar -->
 <div class="toolbar" role="banner">
-  <p style="text-align: center; margin: auto">search with username</p>
+  <div class="title-container">
+    <h1 class="doc-title">Torre - SW Engineering Technical Testing</h1>
+    <p class="subtitle">Display User Info</p>
+  </div>
 </div>
 <div class="searchbar">
-  <input type="seatch" [(ngModel)]="searchText" (keyup.enter)="getUserData()" />
-  <p *ngIf="error">
+  <input [(ngModel)]="searchText" type="text" placeholder="Search for a Torre user..." (keydown.enter)="getUserData()">
+  <div class="button-wrapper">
+    <button (click)="getUserData()" class="search-btn"><i class="fa fa-search"></i></button>
+  </div>
+    <p *ngIf="error">
     this username dosen't exist
   </p>
 </div>
+
 <div class="content">
   <div class="person" *ngIf="!error && userData">
     <div class="image">
       <img [src]="userData?.person?.pictureThumbnail" alt="" />
     </div>
     <h1>{{ userData?.person.name }}</h1>
-    <span class="title"> {{ userData?.person?.professionalHeadline }}</span>
+    <span class="usertitle"> {{ userData?.person?.professionalHeadline }}</span>
 
-    <h4>Education</h4>
+    <h3>Education</h3>
     <div class="properties">
       <p class="edu" *ngFor="let ed of userData?.education">
         {{ ed?.name }}
       </p>
     </div>
 
-    <h4>Experiences</h4>
+    <h3>Experiences</h3>
     <div class="properties">
       <p class="exp" *ngFor="let ex of userData?.experiences">
         {{ ex?.name }}
       </p>
     </div>
 
-    <h4>Awards</h4>
+    <h3>Awards</h3>
     <div class="properties">
       <p class="award" *ngFor="let ex of userData?.awards">
         {{ ex?.name }}
       </p>
     </div>
-    <h4>Languages</h4>
+    <h3>Languages</h3>
     <div class="properties">
       <p class="langs" *ngFor="let ex of userData?.languages">
         {{ ex?.language }}-{{ex?.fluency}}
       </p>
     </div>
   </div>
+
   <div class="person" *ngIf="!error && userData">
-    <h4>Skills</h4>
-    <div class="skills">
-      <p class="skill" *ngFor="let ed of userData?.strengths" >
-        {{ ed?.name }}
-      </p>
-      
+    <h3>Skills</h3>
+    <div class="properties">
+      <app-skills [skills]="userData?.strengths" (onSelect)="onSkillSelected($event)" />
     </div>
+
+    
   </div>
 
   <div class="person" *ngIf="!error && userData">
-    
+    <div class="properties" *ngIf="selectedSkill">
+        <h3>{{ selectedSkill?.name }}</h3>
+        <p class="prof">Proficiency: {{ selectedSkill?.proficiency}}</p>
+        <p class="recommend">Recommendations: {{ selectedSkill?.recommendations }}</p>
+        <p class="weight">Weight: {{ selectedSkill?.weight }}</p>
     </div>
+  </div>
+    
+
 </div>
 <router-outlet></router-outlet>

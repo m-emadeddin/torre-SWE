@@ -1,0 +1,8 @@
+<div *ngFor="let group of groups">
+    <div  *ngIf="skillsByGroup.has(group)">
+      <h3>{{groupTitle[group]}}</h3>
+      <p class="skill" *ngFor="let ed of skillsByGroup.get(group)" (click)="onSelect.emit(ed)">
+        {{ ed?.name }}
+      </p>
+    </div>
+  </div>
