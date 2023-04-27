@@ -49,7 +49,83 @@
       </p>
     </div>
   </div>
-
+  <div class="main">
+    <div class="searchbar">
+        <input [(ngModel)]="searchText" type="text" placeholder="Search for a Torre user..." (keydown.enter)="getUserData()">
+        <button (click)="getUserData()" class="search-btn"><i class="fa fa-search"></i></button>
+        <p *ngIf="error">
+            THIS USERNAME DOESN'T EXIST
+        </p>
+    </div>
+    <div class="wrapper">
+  
+        <div class="profile-card demo-profile-card" *ngIf="!error && userData">
+            <div class="profile-card__img">
+                <img [src]="userData?.person?.pictureThumbnail" alt="" />
+            </div>
+            <div class="profile-card__cnt demo-profile-cnt">
+                <div class="profile-card__name"> {{ userData?.person.name }}</div>
+                <div class="profile-card__txt"> {{ userData?.person?.professionalHeadline }}</div>
+            </div>
+  
+            <div class="profile-card-edu " *ngIf="!error && userData">
+  
+                <span class="profile-card-edu__icon"> <img class= "icon" src="https://img.icons8.com/ios/256/education.png" alt="icon"> </span>
+                <span class="profile-card-edu__txt" *ngFor="let ed of userData?.education">
+            {{ ed?.name }}
+        </span>
+            </div>
+  
+            <div class="profile-card-experience " *ngIf="!error && userData">
+  
+                <span class="profile-card-experience__head"> Experiences</span>
+                <span class="profile-card-experience__txt" *ngFor="let ex of userData?.experiences">
+            {{ ex?.name }}
+        </span>
+  
+            </div>
+  
+            <div class="profile-card-experience " *ngIf="!error && userData">
+  
+                <span class="profile-card-experience__head"> Awards</span>
+                <span class="profile-card-experience__txt" *ngFor="let ex of userData?.awards">
+            {{ ex?.name }}
+        </span>
+  
+            </div>
+  
+            <div class="profile-card-experience " *ngIf="!error && userData">
+  
+                <span class="profile-card-experience__head"> Languages</span>
+                <span class="profile-card-experience__txt" *ngFor="let ex of userData?.languages">
+          {{ ex?.language }}-{{ex?.fluency}}
+        </span>
+  
+            </div>
+  
+            <hr>
+  
+            <br>
+  
+  
+        </div>
+  
+  
+        <div class="profile-card demo-profile-card" *ngIf="!error && userData">
+          <span class="profile-card-experience__head"> Skills</span>
+          <app-skills [skills]="userData?.strengths" (onSelect)="onSkillSelected($event)" />
+        </div>
+        <div class="profile-card demo-profile-card" *ngIf="!error && userData">
+          <div class="skill-card" *ngIf="selectedSkill">
+              <h3>{{ selectedSkill?.name }}</h3>
+              <p class="prof">Proficiency: <span class="profile-card-experience__txt">{{ selectedSkill?.proficiency}}</span></p>
+              <p class="recommend"><span class="profile-card-experience__txt">Recommendations: {{ selectedSkill?.recommendations }}</span></p>
+              <p class="weight"><span class="profile-card-experience__txt">>Weight: {{ selectedSkill?.weight }}</span></p>
+          </div>
+        </div>
+  
+    </div>
+  </div>
 
   <div class="card" *ngIf="!error && userData">
     <h3>Skills</h3>
