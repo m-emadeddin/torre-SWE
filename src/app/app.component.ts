@@ -11,7 +11,7 @@ export class AppComponent {
   constructor(private http: HttpClient) { }
   searchText :string= '';
   error:boolean=false;
-  title = 'torre-project';
+  title = 'torre-SWE';
   userData:any;
   selectedSkill: any;
 
@@ -20,8 +20,9 @@ export class AppComponent {
     this.selectedSkill = null;
     this.userData = null;
     this.error = false;
-    this.http.get(`https://bio.torre.co/api/bios/${this.searchText}`,{headers:{'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Methods': 'GET,POST,OPTIONS,DELETE,PUT'}})
+    this.http.get(`${process.env.API_URL}/api/bios/${this.searchText}`,{
+      headers:{'Access-Control-Allow-Origin': '*',
+              'Access-Control-Allow-Methods': 'GET'}})
     .subscribe((res)=>{
       this.error = false;
       this.userData = res;
