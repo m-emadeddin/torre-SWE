@@ -9,7 +9,14 @@
   color: white;
   font-weight: 600;
 }
-
+.title .main-title, .desc{
+  padding: 5px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
 .cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -285,4 +292,12 @@ body::-webkit-scrollbar-thumb {
   background-color: #3C118C;
   color: #fff;
   border-radius: 15px;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+.prof{
+  font-weight: bold;
 }
