@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { config } from './config';
+
 
 declare var process: {
   env: {
@@ -28,9 +28,15 @@ export class AppComponent {
     this.selectedSkill = null;
     this.userData = null;
     this.error = false;
-    this.http.get(`${config.apiUrl}/api/bios/${this.searchText}`,{
-      headers:{'Access-Control-Allow-Origin': '*',
-              'Access-Control-Allow-Methods': 'GET'}})
+    this.http.get(`${process.env.API_URL}/api/bios/${this.searchText}`, {
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET',
+        'Content-Type': 'application/json',
+      },
+      observe: 'response',
+      responseType: 'json',
+      withCredentials: false,})
     .subscribe((res)=>{
       this.error = false;
       this.userData = res;
