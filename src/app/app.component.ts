@@ -28,6 +28,7 @@ export class AppComponent {
         'Access-Control-Allow-Origin': '*',
         'Access-Control-Allow-Methods': 'GET',
         'Content-Type': 'application/json',
+        'X-True-Client': '127.0.0.1'
       },
       observe: 'response',
       responseType: 'json',
