@@ -43,7 +43,6 @@
                   "maximumError": "4kb"
                 }
               ],
-              "proxyConfig": "proxy.conf.json",
               "outputHashing": "all"
             },
             "development": {
