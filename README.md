@@ -6,22 +6,17 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+# Project Summary
+This project is a web application built with Angular that allows users to search for Torre users by username and display their professional information, including education, work experience, skills, awards, and languages. The application makes use of Torre's APIs to retrieve user data and presents it in a visually appealing and user-friendly format.
 
-## Build
+The project uses Angular components, services, and modules to implement the functionality and styling. It also incorporates third-party libraries such as ng-bootstrap and Font Awesome for UI components and icons.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+The application is responsive and can adapt to different screen sizes, providing a seamless user experience on both desktop and mobile devices.
 
-## Running unit tests
+This project can serve as a starting point for building more complex applications that leverage Torre's APIs and provide useful insights into the professional information of Torre users.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## What else could you have done or improved if you had more time?
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Answer:
+I did my very best with the project, althought if I had more time I'd work on enhance the fornt-end view of the website, and I'd have learnt more about CORS policies, and I probably would have reached a fix for the CORS block problem.
