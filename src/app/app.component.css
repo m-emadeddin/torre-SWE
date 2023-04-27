@@ -70,7 +70,7 @@
   justify-content: space-around;
 }
 
-.person {
+.card {
   /* background-color: 	#5e626b; */
   flex-basis: 45%;
 
@@ -136,6 +136,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+
 }
 
 .person .skills {

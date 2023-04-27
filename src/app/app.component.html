@@ -5,18 +5,17 @@
     <p class="subtitle">Display User Info</p>
   </div>
 </div>
+
 <div class="searchbar">
   <input [(ngModel)]="searchText" type="text" placeholder="Search for a Torre user..." (keydown.enter)="getUserData()">
-  <div class="button-wrapper">
-    <button (click)="getUserData()" class="search-btn"><i class="fa fa-search"></i></button>
-  </div>
-    <p *ngIf="error">
-    this username dosen't exist
+  <button (click)="getUserData()" class="search-btn"><i class="fa fa-search"></i></button>
+  <p *ngIf="error">
+    THIS USERNAME DOESN'T EXIST
   </p>
 </div>
 
 <div class="content">
-  <div class="person" *ngIf="!error && userData">
+  <div class="card" *ngIf="!error && userData">
     <div class="image">
       <img [src]="userData?.person?.pictureThumbnail" alt="" />
     </div>
@@ -36,6 +35,12 @@
         {{ ex?.name }}
       </p>
     </div>
+  </div>
+  <div class="card" *ngIf="!error && userData">
+    <h3>Skills</h3>
+    <div class="properties">
+      <app-skills [skills]="userData?.strengths" (onSelect)="onSkillSelected($event)" />
+    </div>
 
     <h3>Awards</h3>
     <div class="properties">
@@ -51,24 +56,15 @@
     </div>
   </div>
 
-  <div class="person" *ngIf="!error && userData">
-    <h3>Skills</h3>
-    <div class="properties">
-      <app-skills [skills]="userData?.strengths" (onSelect)="onSkillSelected($event)" />
-    </div>
-
-    
-  </div>
-
-  <div class="person" *ngIf="!error && userData">
-    <div class="properties" *ngIf="selectedSkill">
+  <div class="card" *ngIf="!error && userData">
+    <div class="skill-card" *ngIf="selectedSkill">
         <h3>{{ selectedSkill?.name }}</h3>
         <p class="prof">Proficiency: {{ selectedSkill?.proficiency}}</p>
         <p class="recommend">Recommendations: {{ selectedSkill?.recommendations }}</p>
         <p class="weight">Weight: {{ selectedSkill?.weight }}</p>
     </div>
   </div>
-    
+  
 
 </div>
 <router-outlet></router-outlet>
