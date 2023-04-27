@@ -20,7 +20,7 @@ export class AppComponent {
     this.selectedSkill = null;
     this.userData = null;
     this.error = false;
-    this.http.get(`http://localhost:4200/api/bios/${this.searchText}`,{headers:{'Access-Control-Allow-Origin': '*',
+    this.http.get(`https://bio.torre.co/api/bios/${this.searchText}`,{headers:{'Access-Control-Allow-Origin': '*',
     'Access-Control-Allow-Methods': 'GET,POST,OPTIONS,DELETE,PUT'}})
     .subscribe((res)=>{
       this.error = false;
